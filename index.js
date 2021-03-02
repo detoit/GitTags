@@ -81,6 +81,8 @@ const sendMessage = (text, erisMessage, extraInfo = {}) =>
       config.random + new Date().toISOString().split("T")[0]
     );
 
+    const random = seedrandom();
+
     const result = template({
       ...extraInfo,
       author: {
@@ -99,6 +101,7 @@ const sendMessage = (text, erisMessage, extraInfo = {}) =>
         },
       },
       dayRandom: dayRandom(),
+      random: random(),
     });
 
     let messageContent = result;
