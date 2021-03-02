@@ -11,7 +11,7 @@ const path = require("path");
 const config = require("./config.json");
 
 const client = new Eris(config.token);
-const db = new sqlite.Database("db.db");
+const db = new sqlite.Database(config.database);
 
 // Create the Channels Database if it doesn't exist
 db.exec(`CREATE TABLE IF NOT EXISTS options (
